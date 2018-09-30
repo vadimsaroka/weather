@@ -1,0 +1,11 @@
+.bg-image {
+  background-image: url('../background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  -webkit-filter: blur(.5rem);
+  -moz-filter: blur(.5rem);
+  -o-filter: blur(.5rem);
+  -ms-filter: blur(.5rem);
+}
