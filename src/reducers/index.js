@@ -35,11 +35,14 @@ export const requestWeather = (state=initStateRequestWeater, action={}) => {
 		case REQUEST_WEATHER_PENDING:
 			return Object.assign({}, state, { isPending: true })
 		case REQUEST_WEATHER_SUCCESS:
-			return Object.assign({}, state, {weather: action.payload, isPending:false})
+			return Object.assign({}, state, {weather: state.weather.concat(action.payload), isPending:false})
 		case REQUEST_WEATHER_FAILED:
 			return Object.assign({}, state, {error: action.payload, isPending:false})
 		default:
 			return state;
 	}
 }
+
+
+
 

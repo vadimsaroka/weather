@@ -15,37 +15,33 @@ const mapStateToProps = state => {
 class WeatherList extends React.Component {
 
 	renderWeather(data) {
+		const name = data.city.name;
+
 		return (
-			<tr>
+			<tr key={name}>
 				<td>{data.city.name}</td>
 			</tr>
 		);
 	}
 
 	render() {
-		const arr = this.props.weather;
-		if(arr.length !== 0) {
-			console.log(arr.city.name);
-			return (
-				<table className="table_list">
-					<thead>
-						<tr>
-							<th>City</th>
-							<th>Temperature</th>
-							<th>Pressure</th>
-							<th>Humidity</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>{arr.city.name}</td>
-						</tr>
-					</tbody>
-				</table>
-			);
-		}
-		
-		return '';
+
+		return (
+			<table className="table_list">
+				<thead>
+					<tr>
+						<th>City</th>
+						<th>Temperature</th>
+						<th>Pressure</th>
+						<th>Humidity</th>
+					</tr>
+				</thead>
+				<tbody>
+					{this.props.weather.map(this.renderWeather)}
+				</tbody>
+			</table>
+		);
+
 	}
 }
 
