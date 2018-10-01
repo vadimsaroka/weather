@@ -10,7 +10,7 @@ import {
 
 const initStatesearchField = {
 	term: ''
-}
+};
 
 export const searchWeather = (state=initStatesearchField, action={}) => {
 	switch(action.type) {
@@ -26,7 +26,9 @@ const initStateRequestWeater = {
 	isPending: false,
 	weather: [],
 	error: ''
-}
+};
+
+
 
 export const requestWeather = (state=initStateRequestWeater, action={}) => {
 	switch(action.type) {
@@ -40,3 +42,4 @@ export const requestWeather = (state=initStateRequestWeater, action={}) => {
 			return state;
 	}
 }
+

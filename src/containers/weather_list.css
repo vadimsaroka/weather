@@ -1,0 +1,9 @@
+.table_list {
+	position: absolute;
+	width: 80%;
+	top: 15rem;
+	left: 50%;
+	margin: 0 auto;
+	padding-left: 3rem;
+	transform: translate(-50%, 0);
+}

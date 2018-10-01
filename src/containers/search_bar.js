@@ -4,14 +4,14 @@ import { connect } from 'react-redux';
 import { onSearchfieldChange, fetchWeather } from '../actions/index';
 
 
-const mapStateToProps = state => {
-	return {
-		term: state.searchWeather.term,
-		isPending: state.requestWeather.isPending,
-		weather: state.requestWeather.weather,
-		error: state.requestWeather.error
-	}
-};
+// const mapStateToProps = state => {
+// 	return {
+// 		term: state.searchWeather.term,
+// 		isPending: state.requestWeather.isPending,
+// 		weather: state.requestWeather.weather,
+// 		error: state.requestWeather.error
+// 	}
+// };
 
 const mapDispatchToProps = dispatch => {
 	let query;
@@ -47,4 +47,4 @@ class SearchBar extends React.Component {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);
