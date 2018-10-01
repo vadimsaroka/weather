@@ -14,16 +14,15 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
+	let query;
 	return {
 		onInputChange: event => {
-			console.log(event.target.value);
 			dispatch(onSearchfieldChange(event.target.value));
+			return (query=event.target.value)
 		},
 		onSubmitChange: event => {
+			dispatch(fetchWeather(query));
 			event.preventDefault();
-
-			dispatch(fetchWeather(this.props.term));
-
 			event.target.reset();
 		}
 	}
