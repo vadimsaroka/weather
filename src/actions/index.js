@@ -17,7 +17,7 @@ export const onSearchfieldChange = text => ({
 export const fetchWeather = city => {
 	return dispatch => {
 		dispatch ({ type: REQUEST_WEATHER_PENDING });
-		fetch(`${proxy}https://api.openweathermap.org/data/2.5/forecast?q=${city},us&appid=${API_KEY}`)
+		fetch(`${proxy}https://api.openweathermap.org/data/2.5/forecast?q=${city},us&units=imperial&appid=${API_KEY}`)
 		.then(response => response.json())
 		.then(result => dispatch({ type: REQUEST_WEATHER_SUCCESS, payload: result }))
         .catch(error => dispatch({ type: REQUEST_WEATHER_FAILED, payload: error }))
