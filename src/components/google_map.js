@@ -1,18 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 
-class GoogleMap extends Component {
-  // componentDidMount() {
-  //   new google.maps.Map(document.getElementById('map'), {
-  //     zoom: 12,
-  //     center: {
-  //       lat: this.props.lat,
-  //       lng: this.props.lon
-  //     }
-  //   });
-  // }
+class GoogleMap extends React.Component {
+  componentDidMount() {
+    new window.google.maps.Map(this.refs.map, {
+      zoom: 8,
+      center: {
+      	lng: this.props.lon,
+        lat: this.props.lat
+      },
+      mapTypeId: 'terrain'
+    });
+  }
 
+  
   render() {
-    return <div id="map" />;
+    return <div id="map" ref="map" />;
   }
 }
 
