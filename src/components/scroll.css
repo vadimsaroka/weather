@@ -1,0 +1,24 @@
+.scroll {
+	overflow-Y: scroll;
+	height: 80vh;
+	position: absolute;
+	top: 12rem;
+	left: 50%;
+	width: 80%;
+	margin: 0 auto;
+	-webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 1.5rem;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #a92d66; 
+    border-radius: 1rem;
+}
