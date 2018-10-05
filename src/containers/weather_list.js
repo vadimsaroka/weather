@@ -22,6 +22,7 @@ class WeatherList extends React.Component {
 		const press = data.list.map(press => press.main.pressure);
 		const hum = data.list.map(hum => hum.main.humidity);
 		const {lat, lon} = data.city.coord;
+ 
 		
 		return (
 			<tr key={name}>
@@ -34,6 +35,10 @@ class WeatherList extends React.Component {
 	}
 
 	render() {
+
+		if(this.props.isPending) {
+        	return <div className="loading"></div>
+     	}
 
 		return (
 			<table className="table_list">
